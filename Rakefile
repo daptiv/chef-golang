@@ -17,10 +17,7 @@ task :version do
   IO.write('version.txt', (ENV['BUILD_NUMBER'] ? "0.0.#{ENV['BUILD_NUMBER']}" : '0.0.1'))
 end
 
-# FC043 is excluded because of the problem described in https://github.com/NOX73/chef-golang/issues/3
-FoodCritic::Rake::LintTask.new do |t|
-  t.options = { :fail_tags => ['any'], :tags => ['~FC043'] }
-end
+FoodCritic::Rake::LintTask.new
 
 RSpec::Core::RakeTask.new do |task|
   task.pattern = 'spec/**/*_spec.rb'
