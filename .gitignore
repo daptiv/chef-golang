@@ -3,6 +3,7 @@
 
 .kitchen/
 .kitchen.local.yml
+version.txt
 
 Gemfile.lock
 Berksfile.lock
